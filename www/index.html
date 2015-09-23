@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+    	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    	<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Hello World</title>
+    </head>
+    <body>
+		
+		<!----------------------------------  Panel: Main Menu ----------------------------------------->
+		<div data-role="panel" id="main-menu-panel">
+		
+			<ul data-role="listview" id="listview-1">
+				<li><a href="#new_contact_page" data-transition="slide">New Contact</a></li>
+				<li><a href="#enterprise_contacts_list_page" data-transition="slide">Enterprise Contacts</a></li>
+				<!-- Device Contacts
+				<li><a href="#device_contacts_list_page" data-transition="slide">Device Contacts</a></li>
+				-->
+			</ul>
+		</div>
+		
+		<!----------------------------------  PAGE: Add Contact ----------------------------------------->
+		
+		<div data-role="page" id="new_contact_page">
+			<div data-role="header">
+				<a 	href="#main-menu-panel"
+					id="button-1"
+					class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all"
+					data-transition="slide" data-direction="reverse"></a>
+				<h1>New Contact</h1>
+			</div>
+			<form name="postForm" id="postForm" data-ajax="false">
+				 <fieldset>
+					<div data-role="content">
+						<div class="ui-field-contain">
+							<input name="firstName" id="firstName" data-clear-btn="true" value="" placeholder="First Name" type="text"/>
+							<input name="lastName" id="lastName" data-clear-btn="true" value="" placeholder="Last Name" type="text"/>
+						</div>
+						<div class="ui-field-contain">
+							<input name="city" id="city" data-clear-btn="true" value="" placeholder="City" type="text"/>
+							<input name="state" id="state" data-clear-btn="true" value="" placeholder="State" type="text"/>
+						</div>
+						<div class="ui-field-contain">
+							<input name="email" id="email" data-clear-btn="true" value="" placeholder="Email" type="email"/>
+							<input name="contactPhone" id="contactPhone" data-clear-btn="true" value="" placeholder="Phone" type="tel"/>
+						</div>
+						<div id="formMsgs"></div>
+						<div class="ui-grid-a app-responsive ui-field-contain">
+			                <div class="ui-block-a">&nbsp;</div>
+			                <div class="ui-block-b"><input type="submit" id="newSubmit" value="Add" data-theme="b"/></div>
+			            </div>
+					</div>
+				</fieldset>
+			</form>
+			<div data-role="footer">
+				<h4>New Contact</h4>
+			</div>
+		</div>
+		
+		<!----------------------------------  PAGE: Contact Details ----------------------------------------->
+		
+		<div data-role="page" id="contact_details_page">
+			<div data-role="header">
+				<a 	href="#enterprise_contacts_list_page"
+					id="button-1"
+					class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all"
+					data-transition="slide" data-direction="reverse"></a>
+				<h1>Contact Details</h1>
+			</div>
+				<div data-role="content">
+					<div class="ui-field-contain">
+						<img id="mugshot" alt="mugshot" src="img/mugshots/55915059bf963a0fcde2664e.jpg" width="100%"/>
+						<span name="firstName" id="firstName">Rene</span>
+						<span name="lastName" id="lastName">Vogt-Lowell</span>
+					</div>
+					<div class="ui-field-contain">
+						<span name="city" id="city">Dayton</span>
+						<span name="state" id="state">Ohio</span>
+					</div>
+					<div class="ui-field-contain">
+						<span name="email" id="email">rene@vogt-lowell.com</span><br/><br/>
+						<span name="contactPhone" id="contactPhone">937.555.5555</span>
+					</div>
+					<div class="ui-grid-a app-responsive ui-field-contain">
+						<div class="ui-block-a">
+							<a href="" id="editButton" class="ui-btn ui-icon-edit ui-btn-icon-left ui-corner-all ui-btn-a">Edit</a>
+						</div>
+						<div class="ui-block-b">
+							<a href="" id="deleteButton" class="ui-btn ui-icon-delete ui-btn-icon-left ui-corner-all ui-btn-a">Delete</a>
+						</div>
+		            </div>
+				</div>
+			<div data-role="footer">
+				<h4>Contact Details</h4>
+			</div>
+		</div>
+		
+		<!----------------------------------  PAGE: Update Contact ----------------------------------------->
+		
+		<div data-role="page" id="update_contact_page">
+			<div data-role="header">
+				<a 	href="#main-menu-panel"
+					id="button-1"
+					class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all"
+					data-transition="slide" data-direction="reverse"></a>
+				<h1>
+				Update Contact</h1>
+			</div>
+			<form name="putForm" id="putForm" method="post"  data-ajax="false">
+				 <fieldset>
+					<div data-role="content">
+						<div class="ui-field-contain">
+							<input name="firstName" id="firstName" data-clear-btn="true" value="" placeholder="First Name" type="text"/>
+							<input name="lastName" id="lastName" data-clear-btn="true" value="" placeholder="Last Name" type="text"/>
+						</div>
+						<div class="ui-field-contain">
+							<input name="city" id="city" data-clear-btn="true" value="" placeholder="City" type="text"/>
+							<input name="state" id="state" data-clear-btn="true" value="" placeholder="State" type="text"/>
+						</div>
+						<div class="ui-field-contain">
+							<input name="email" id="email" data-clear-btn="true" value="" placeholder="Email" type="email"/>
+							<input name="contactPhone" id="contactPhone" data-clear-btn="true" value="" placeholder="Phone" type="tel"/>
+						</div>
+						<div id="formMsgs"></div>
+						<div class="ui-grid-a app-responsive ui-field-contain">
+			                <div class="ui-block-a"><input type="submit" id="updateSubmit" value="Update" data-theme="b"/></div>
+			                <div class="ui-block-b"><input type="button" name="cancel" id="cancel" value="Reset"/></div>
+			            </div>
+					</div>
+				</fieldset>
+			</form>
+			<div data-role="footer">
+				<h4>Update Contact</h4>
+			</div>
+		</div>
+		
+		<!----------------------------------  PAGE: Enterprise Contacts List ----------------------------------------->
+		
+		<div data-role="page" id="enterprise_contacts_list_page">
+			<div data-role="header">
+				<a 	href="#main-menu-panel"
+					id="button-1"
+					class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all"
+					data-transition="slide" data-direction="reverse"></a>
+				<h1>Contacts</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" id="enterprise_contacts_listview" data-filter="true" data-theme="a">
+					<li><h3><a href="#">Item 1</a></h3>
+						<p>Select the item you like the most</p>
+						<ul>
+							<li>test 1</li>
+							<li>test 2</li>
+						</ul>
+					</li>
+					<li>Item 2
+						<ul><li>test 1</li><li>test 2</li></ul>
+					</li>
+					<li>Item 3
+						<ul><li>test 1</li><li>test 2</li></ul>
+					</li>
+				</ul> 
+			</div>
+			<div data-role="footer">
+				<h4>Enterprise Contacts</h4>
+			</div>
+		</div>
+		
+		<!----------------------------------  PAGE: Device Contacts List ----------------------------------------->
+		 
+		<!--
+		<div data-role="page" id="device_contacts_list_page">
+			<div data-role="header">
+				<a href="#main-menu-panel" id="button-1" class="ui-btn ui-icon-bars ui-btn-icon-right ui-corner-all" data-transition="slide" data-direction="reverse">menu</a>
+				<h1>Device Contacts</h1>
+			</div>
+			<div data-role="content">
+				<a href="" id="btnDeviceContacts" class="ui-btn ui-corner-all">Fetch Contacts</a>
+				<div id="debug"></div>
+				<p>
+					<form class="ui-filterable">
+						<input data-type="search" id="searchForListview-1"/>
+					</form>
+					<ul data-role="listview" id="deviceContacts" data-filter="true" data-input="#searchForListview-1">
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+					</ul> 
+			</div>
+		</div>
+		 -->
+		  
+         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
